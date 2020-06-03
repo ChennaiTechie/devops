@@ -191,6 +191,32 @@
 					</excludes>
 				</configuration>
 			</plugin>
+ <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.7</version>
+        <configuration>
+          <formats>
+            <format>html</format>
+            <format>xml</format>
+          </formats>
+          <check>
+            <haltOnFailure>true</haltOnFailure>
+            <lineRate>100</lineRate>
+            <branchRate>100</branchRate>
+            <totalLineRate>100</totalLineRate>
+            <totalBranchRate>100</totalBranchRate>
+          </check>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>install</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
         </plugins>
 		<finalName>addressbook</finalName>
